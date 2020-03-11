@@ -26,8 +26,9 @@ public class E88_MergeSortedArray {
         int mi = m - 1;
         int ni = n - 1;
         int ii = nums1.length - 1;
-        while (ii >= 0) {
-            if (ni >=0 && nums1[mi] > nums2[ni]) {
+        while (ii >= 0 && ni >= 0) {
+
+            if (mi >=0 && nums1[mi] > nums2[ni]) {
                 nums1[ii--] = nums1[mi--];
             } else {
                 nums1[ii--] = nums2[ni--];
