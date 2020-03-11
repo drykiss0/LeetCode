@@ -2,14 +2,12 @@ package org.evoludev.easy;
 
 import org.junit.Test;
 
-public class E70_ClimbingStairs {
+public class E509_FibonacciNumber {
 
-    public int climbStairs(int n) {
-
+    public int fib(int N) {
         int prevFib = 1;
         int fib = 0;
-
-        for (int i = 1; i <= n+1; i++) {
+        for (int i = 1; i <= N; i++) {
             fib = fib + prevFib;
             prevFib = fib - prevFib;
         }
@@ -20,7 +18,7 @@ public class E70_ClimbingStairs {
     @Test
     public void test() {
 
-        int num = 4;// output:5
-        System.out.println("climbStairs(" + num + ") = " + climbStairs(num));
+        int num = 4;// output:3
+        System.out.println("fib(" + num + ") = " + fib(num));
     }
 }
