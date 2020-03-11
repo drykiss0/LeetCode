@@ -26,7 +26,7 @@ public class E53_MaximumSubarray {
     public void test() {
 
         //int[] num = {-2,1,-3,4,-1,2,1,-5,4};// output: 6
-        int[] num = {-2, 1};// output:
+        int[] num = {0, 6, 5, -5, -5, 20};// output: 21
         System.out.println("maxSubArray(" + Arrays.toString(num) + ") = " + maxSubArray(num));
     }
 }
