@@ -26,9 +26,9 @@ import org.junit.Test;
  * Note:
  * Bonus points if you could solve it both recursively and iteratively.
  */
-public class E101_SymmetricTree {
+public class E101_SymmetricTree_Recursive {
 
-    public class TreeNode {
+    private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -39,18 +39,39 @@ public class E101_SymmetricTree {
 
         @Override
         public String toString() {
-            return Integer.toString(val);
+            return val + (left != null ? " L" + left: "") + (right != null ? " R" + right: "");
         }
     }
 
     public boolean isSymmetric(TreeNode root) {
-        return false;
+        return root == null || isSymmetric(root.left, root.right);
+    }
+
+    private boolean isSymmetric(TreeNode left, TreeNode right) {
+        if (left == null && right == null) {
+            return true;
+        }
+        if (left == right || left == null || right == null) {
+            return false;
+        }
+        return left.val == right.val &&
+                isSymmetric(left.left, right.right)
+                &&
+                isSymmetric(left.right, right.left);
     }
 
     @Test
     public void test() {
 
         TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(3);
+        root.left.right = new TreeNode(4);
+
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(3);
+
         System.out.println(String.format("isSymmetric(%s) = %s", root, isSymmetric(root)));
     }
 }
