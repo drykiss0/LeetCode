@@ -1,6 +1,4 @@
-package org.evoludev.easy;
-
-import org.junit.Test;
+package com.computevo.leetcode.easy.round1;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -9,22 +7,22 @@ import java.util.Queue;
 
 /**
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
- *
+ * <p>
  * For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
- *
+ * <p>
  * Example:
- *
+ * <p>
  * Given the sorted array: [-10,-3,0,5,9],
- *
+ * <p>
  * One possible answer is: [0,-3,9,-10,null,5], which represents the following height balanced BST:
- *
- *       0
- *      / \
- *    -3   9
- *    /   /
- *  -10  5
+ * <p>
+ * 0
+ * / \
+ * -3   9
+ * /   /
+ * -10  5
  */
-public class E108_ConvertSortedArrayToBinarySearchTree {
+public class e108_ConvertSortedArrayToBinarySearchTree {
 
     private class TreeNode {
         int val;
@@ -42,7 +40,7 @@ public class E108_ConvertSortedArrayToBinarySearchTree {
     }
 
     public TreeNode sortedArrayToBST(int[] nums) {
-       return sortedArrayToBST(nums, 0, nums.length - 1);
+        return sortedArrayToBST(nums, 0, nums.length - 1);
     }
 
     public TreeNode sortedArrayToBST(int[] nums, int start, int end) {
@@ -61,14 +59,6 @@ public class E108_ConvertSortedArrayToBinarySearchTree {
         return node;
     }
 
-    @Test
-    public void test() {
-
-        //int[] arr = {-10,-3,0,5,9};
-        int[] arr = {0,1,2,3,4,5};
-
-        System.out.println(String.format("sortedArrayToBST(%s) = %s", Arrays.toString(arr), toBfsString(sortedArrayToBST(arr))));
-    }
 
     public String toBfsString(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -85,6 +75,17 @@ public class E108_ConvertSortedArrayToBinarySearchTree {
             }
         }
         return result.toString();
+    }
+
+    public static void main(String[] args) {
+
+        e108_ConvertSortedArrayToBinarySearchTree obj = new e108_ConvertSortedArrayToBinarySearchTree();
+        //int[] arr = {-10,-3,0,5,9};
+        int[] arr = {0, 1, 2, 3, 4, 5};
+
+        System.out.println(String.format("sortedArrayToBST(%s) = %s",
+                Arrays.toString(arr),
+                obj.toBfsString(obj.sortedArrayToBST(arr))));
     }
 
 }

@@ -1,10 +1,8 @@
-package org.evoludev.easy;
-
-import org.junit.Test;
+package com.computevo.leetcode.easy.round1;
 
 import java.util.Arrays;
 
-public class E53_MaximumSubarray {
+public class e53_MaximumSubarray {
 
     public int maxSubArray(int[] nums) {
 
@@ -22,11 +20,10 @@ public class E53_MaximumSubarray {
     }
 
 
-    @Test
-    public void test() {
+    public static void main(String[] args) {
 
         //int[] num = {-2,1,-3,4,-1,2,1,-5,4};// output: 6
         int[] num = {0, 6, 5, -5, -5, 20};// output: 21
-        System.out.println("maxSubArray(" + Arrays.toString(num) + ") = " + maxSubArray(num));
+        System.out.println("maxSubArray(" + Arrays.toString(num) + ") = " + new e53_MaximumSubarray().maxSubArray(num));
     }
 }

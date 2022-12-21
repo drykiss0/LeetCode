@@ -1,34 +1,32 @@
-package org.evoludev.easy;
-
-import org.junit.Test;
+package com.computevo.leetcode.easy.round1;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
- *
+ * <p>
  * For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
- *
- *     1
- *    / \
- *   2   2
- *  / \ / \
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * / \ / \
  * 3  4 4  3
- *
- *
+ * <p>
+ * <p>
  * But the following [1,2,2,null,3,null,3] is not:
- *
- *     1
- *    / \
- *   2   2
- *    \   \
- *    3    3
- *
- *
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * \   \
+ * 3    3
+ * <p>
+ * <p>
  * Note:
  * Bonus points if you could solve it both recursively and iteratively.
  */
-public class E101_SymmetricTree_Recursive {
+public class e101_SymmetricTree_Recursive {
 
-    private class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -39,7 +37,7 @@ public class E101_SymmetricTree_Recursive {
 
         @Override
         public String toString() {
-            return val + (left != null ? " L" + left: "") + (right != null ? " R" + right: "");
+            return val + (left != null ? " L" + left : "") + (right != null ? " R" + right : "");
         }
     }
 
@@ -60,8 +58,8 @@ public class E101_SymmetricTree_Recursive {
                 isSymmetric(left.right, right.left);
     }
 
-    @Test
-    public void test() {
+
+    public static void main(String[] args) {
 
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -72,6 +70,6 @@ public class E101_SymmetricTree_Recursive {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
 
-        System.out.println(String.format("isSymmetric(%s) = %s", root, isSymmetric(root)));
+        System.out.println(String.format("isSymmetric(%s) = %s", root, new e101_SymmetricTree_Recursive().isSymmetric(root)));
     }
 }

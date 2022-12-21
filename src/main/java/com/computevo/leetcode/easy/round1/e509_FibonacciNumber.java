@@ -1,8 +1,6 @@
-package org.evoludev.easy;
+package com.computevo.leetcode.easy.round1;
 
-import org.junit.Test;
-
-public class E509_FibonacciNumber {
+public class e509_FibonacciNumber {
 
     public int fib(int N) {
         int prevFib = 1;
@@ -15,10 +13,9 @@ public class E509_FibonacciNumber {
     }
 
 
-    @Test
-    public void test() {
+    public static void main(String[] args) {
 
         int num = 4;// output:3
-        System.out.println("fib(" + num + ") = " + fib(num));
+        System.out.println("fib(" + num + ") = " + new e509_FibonacciNumber().fib(num));
     }
 }

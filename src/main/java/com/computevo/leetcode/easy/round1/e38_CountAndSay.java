@@ -1,10 +1,6 @@
-package org.evoludev.easy;
+package com.computevo.leetcode.easy.round1;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-public class E38_CountAndSay {
+public class e38_CountAndSay {
 
     public String countAndSay(int n) {
         if (n == 1) {
@@ -29,10 +25,9 @@ public class E38_CountAndSay {
     }
 
 
-    @Test
-    public void test() {
+    public static void main(String[] args) {
 
         int n = 5;
-        System.out.println("countAndSay(" + n + ") = " + countAndSay(n));
+        System.out.println("countAndSay(" + n + ") = " + new e38_CountAndSay().countAndSay(n));
     }
 }

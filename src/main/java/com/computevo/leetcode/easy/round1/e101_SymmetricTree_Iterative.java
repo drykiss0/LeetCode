@@ -1,6 +1,4 @@
-package org.evoludev.easy;
-
-import org.junit.Test;
+package com.computevo.leetcode.easy.round1;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -9,31 +7,31 @@ import java.util.Queue;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
- *
+ * <p>
  * For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
- *
- *     1
- *    / \
- *   2   2
- *  / \ / \
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * / \ / \
  * 3  4 4  3
- *
- *
+ * <p>
+ * <p>
  * But the following [1,2,2,null,3,null,3] is not:
- *
- *     1
- *    / \
- *   2   2
- *    \   \
- *    3    3
- *
- *
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * \   \
+ * 3    3
+ * <p>
+ * <p>
  * Note:
  * Bonus points if you could solve it both recursively and iteratively.
  */
-public class E101_SymmetricTree_Iterative {
+public class e101_SymmetricTree_Iterative {
 
-    private class TreeNode {
+    private static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -88,8 +86,8 @@ public class E101_SymmetricTree_Iterative {
         return true;
     }
 
-    @Test
-    public void test() {
+
+    public static void main(String[] args) {
 
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -100,7 +98,8 @@ public class E101_SymmetricTree_Iterative {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
 
-        System.out.println(String.format("isSymmetric(%s) = %s", Arrays.toString(toBfsArray(root)), isSymmetric(root)));
+        e101_SymmetricTree_Iterative obj = new e101_SymmetricTree_Iterative();
+        System.out.println(String.format("isSymmetric(%s) = %s", Arrays.toString(obj.toBfsArray(root)), obj.isSymmetric(root)));
     }
 
     /**

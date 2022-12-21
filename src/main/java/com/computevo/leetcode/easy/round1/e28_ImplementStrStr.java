@@ -1,10 +1,6 @@
-package org.evoludev.easy;
+package com.computevo.leetcode.easy.round1;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-public class E28_ImplementStrStr {
+public class e28_ImplementStrStr {
 
     public int strStr(String haystack, String needle) {
 
@@ -26,11 +22,12 @@ public class E28_ImplementStrStr {
         return haystack.indexOf(needle);
     }
 
-    @Test
-    public void test() {
+
+    public static void main(String[] args) {
         String haystack = "mississippi";
         String needle = "issip";
 
-        System.out.println("strStr(" + haystack + ", " + needle + ") = " + strStr(haystack, needle));
+        System.out.println("strStr(" + haystack + ", " + needle + ") = " + new e28_ImplementStrStr()
+                .strStr(haystack, needle));
     }
 }

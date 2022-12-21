@@ -1,10 +1,8 @@
-package org.evoludev.easy;
-
-import org.junit.Test;
+package com.computevo.leetcode.easy.round1;
 
 import java.util.Arrays;
 
-public class E66_PlusOne {
+public class e66_PlusOne {
 
     public int[] plusOne(int[] digits) {
 
@@ -28,10 +26,9 @@ public class E66_PlusOne {
     }
 
 
-    @Test
-    public void test() {
+    public static void main(String[] args) {
 
         int[] num = {0};// output: {1}
-        System.out.println("plusOne(" + Arrays.toString(num) + ") = " + Arrays.toString(plusOne(num)));
+        System.out.println("plusOne(" + Arrays.toString(num) + ") = " + Arrays.toString(new e66_PlusOne().plusOne(num)));
     }
 }
