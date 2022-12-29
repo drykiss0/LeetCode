@@ -1,6 +1,11 @@
 package com.computevo.leetcode.easy.helper;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class ListNode {
+    private int cycledToIndex = -1;
     public int val;
     public ListNode next;
 
@@ -15,15 +20,30 @@ public class ListNode {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        ListNode node = this;
-        while (node != null) {
-            sb.append(node.val);
-            sb.append(", ");
-            node = node.next;
+        return "[" + asList().stream().map(ListNode::toValString).collect(Collectors.joining(", ")) + "]";
+    }
+
+    private String toValString() {
+        return cycledToIndex < 0 ? String.valueOf(val) : String.format("%s |↺%s", val, cycledToIndex);
+    }
+
+    public List<ListNode> asList() {
+        List<ListNode> result = new ArrayList<>();
+        ListNode curr = this;
+        while (curr != null) {
+            result.add(curr);
+            if (curr.cycledToIndex < 0)
+                curr = curr.next;
+            else
+                curr = null;
         }
-        sb.delete(sb.length() - 2, sb.length());
-        sb.append("]");
-        return sb.toString();
+        return result;
+    }
+
+    public ListNode withCycleTo(int idx) {
+        List<ListNode> list = asList();
+        list.get(list.size() - 1).cycledToIndex = idx;
+        list.get(list.size() - 1).next = list.get(idx);
+        return this;
     }
 }
