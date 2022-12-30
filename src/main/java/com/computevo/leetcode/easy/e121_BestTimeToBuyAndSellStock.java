@@ -7,14 +7,17 @@ import static com.computevo.leetcode.easy.helper.Utils.printSolution;
  */
 public class e121_BestTimeToBuyAndSellStock {
 
-    private int maxProfit(int[] prices, int left, int right) {
-        if (left >= right) return 0;
-        int profit = prices[right] - prices[left];
-        return Math.max(profit, Math.max(maxProfit(prices, left + 1, right), maxProfit(prices, left, right - 1)));
-    }
-
     public int maxProfit(int[] prices) {
-        return Math.max(0, maxProfit(prices, 0, prices.length - 1));
+        int min = Integer.MAX_VALUE;
+        int currentProfit = 0;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < min) {
+                min = prices[i];
+            } else if (currentProfit < prices[i] - min) {
+                currentProfit = prices[i] - min;
+            }
+        }
+        return currentProfit;
     }
 
     public static void main(String[] args) {

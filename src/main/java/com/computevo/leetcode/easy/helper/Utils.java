@@ -46,8 +46,7 @@ public class Utils {
             if (StringUtils.isNotBlank(data.getLeft())) {
                 sb.append(String.format("%s = ", data.getLeft()));
             }
-            return sb.append(String.format("%s\n", toSmartString(data.getRight())))
-                    .toString();
+            return sb.append(String.format("%s\n", toSmartString(data.getRight()))).toString();
         }).collect(Collectors.joining());
         System.out.printf("%s:\n%s", sectionLabel, namedInputString);
     }
@@ -92,13 +91,5 @@ public class Utils {
             nodes.get(i).next = nodes.get(i + 1);
         }
         return nodes.size() > 0 ? nodes.get(0) : null;
-    }
-
-    public static int max(int n1, int n2, int n3, int n4) {
-        return Math.max(n1, Math.max(n2, Math.max(n3, n4)));
-    }
-
-    public static int max(int n1, int n2, int n3) {
-        return Math.max(n1, Math.max(n2, n3));
     }
 }
