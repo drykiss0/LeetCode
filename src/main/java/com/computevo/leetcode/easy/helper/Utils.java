@@ -92,4 +92,17 @@ public class Utils {
         }
         return nodes.size() > 0 ? nodes.get(0) : null;
     }
+
+    public static ListNode parseNodes(String input) {
+        List<ListNode> nodes = Arrays.stream(input
+                        .replaceAll("[\\[\\]\\s]", "")
+                        .split(","))
+                .filter(s -> !s.isBlank())
+                .map(s -> new ListNode(Integer.parseInt(s)))
+                .toList();
+        for (int i = 0; i < nodes.size() - 1; i++) {
+            nodes.get(i).next = nodes.get(i + 1);
+        }
+        return nodes.size() > 0 ? nodes.get(0) : null;
+    }
 }
