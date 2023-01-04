@@ -11,6 +11,12 @@ import java.util.stream.Collectors;
 
 public class Utils {
 
+    public static final String DELIM = ", ";
+
+    public static void printDebug(Object obj) {
+        System.out.printf("  --> %s%n", toSmartString(obj));
+    }
+
     public static void printSolution(Object input, Object output) {
         printInput(input);
         printOutput(output);

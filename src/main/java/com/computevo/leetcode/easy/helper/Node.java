@@ -6,7 +6,6 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Node {
-    public static final String DELIM = ", ";
     public int val;
     public List<Node> children = new ArrayList<>();
 
@@ -21,7 +20,7 @@ public class Node {
 
     @Override
     public String toString() {
-        return "[" + String.join(DELIM, String.valueOf(val), toStringChildren().collect(Collectors.joining(DELIM)))  + "]";
+        return "[" + String.join(Utils.DELIM, String.valueOf(val), toStringChildren().collect(Collectors.joining(Utils.DELIM)))  + "]";
     }
 
     private Stream<String> toStringChildren() {
