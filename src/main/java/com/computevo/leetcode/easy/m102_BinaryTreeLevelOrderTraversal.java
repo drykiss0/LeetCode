@@ -12,7 +12,7 @@ import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 /**
  * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/?envType=study-plan&id=level-1">link</a>
  */
-public class e102_BinaryTreeLevelOrderTraversal {
+public class m102_BinaryTreeLevelOrderTraversal {
     /**
      * Definition for a binary tree node.
      * public class TreeNode {
@@ -100,8 +100,8 @@ public class e102_BinaryTreeLevelOrderTraversal {
 
         printInput(input);
         printOutput(
-                "    Mine", new e102_BinaryTreeLevelOrderTraversal().levelOrderMine(input),
-                "Official", new e102_BinaryTreeLevelOrderTraversal().levelOrder(input)
+                "    Mine", new m102_BinaryTreeLevelOrderTraversal().levelOrderMine(input),
+                "Official", new m102_BinaryTreeLevelOrderTraversal().levelOrder(input)
         );
     }
 }
