@@ -4,12 +4,23 @@ import static com.computevo.leetcode.easy.helper.Utils.printInput;
 import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 
 /**
- * https://leetcode.com/problems/binary-search/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/binary-search/?envType=study-plan&id=level-1">link</a>
  */
 public class e704_BinarySearch {
 
     public int search(int[] nums, int target) {
-        return 0;
+        int left = 0;
+        int right = nums.length - 1;
+        int pivot;
+        while (right >= left) {
+            pivot = (right + left) / 2;
+            if (nums[pivot] > target)
+                right = pivot - 1;
+            else if (nums[pivot] < target)
+                left = pivot + 1;
+            else return pivot;
+        }
+        return -1;
     }
 
 

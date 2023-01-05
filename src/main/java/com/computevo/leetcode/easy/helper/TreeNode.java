@@ -1,7 +1,6 @@
 package com.computevo.leetcode.easy.helper;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -11,10 +10,9 @@ import static java.util.Optional.ofNullable;
 
 public class TreeNode {
     public static final String NULL_STR = "null";
-    public int val;
+    public final int val;
     public TreeNode left;
     public TreeNode right;
-    private List<TreeNode> children = List.of();
 
     public TreeNode(int val) {
         this.val = val;
@@ -24,7 +22,6 @@ public class TreeNode {
         this.val = val;
         this.left = left;
         this.right = right;
-        this.children = List.of(left, right);
     }
 
     @Override

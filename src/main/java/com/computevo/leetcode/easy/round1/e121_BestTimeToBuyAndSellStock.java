@@ -40,8 +40,10 @@ public class e121_BestTimeToBuyAndSellStock {
 
     public static void main(String[] args) {
 
-        //int[] prices = {7,1,5,3,6,4};
-        //int[] prices = {7,6,4,3,1};
+        /*
+         int[] prices = {7,1,5,3,6,4};
+         int[] prices = {7,6,4,3,1};
+        */
         int[] prices = {7, 2, 4, 1};
         System.out.println("maxProfit(" + Arrays.toString(prices) + ") = "
                 + new e121_BestTimeToBuyAndSellStock().maxProfit(prices));

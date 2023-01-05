@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class ListNode {
     private int cycledToIndex = -1;
-    public int val;
+    public final int val;
     public ListNode next;
 
     public ListNode(int val) {

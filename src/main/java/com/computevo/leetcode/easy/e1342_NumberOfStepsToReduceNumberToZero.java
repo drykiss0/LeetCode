@@ -3,7 +3,7 @@ package com.computevo.leetcode.easy;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+ * <a href="https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/">link</a>
  */
 public class e1342_NumberOfStepsToReduceNumberToZero {
 

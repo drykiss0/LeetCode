@@ -61,7 +61,7 @@ public class e104_MaximumDepthOfBinaryTree {
         root.right.right = new TreeNode(7);
 
         e104_MaximumDepthOfBinaryTree obj = new e104_MaximumDepthOfBinaryTree();
-        System.out.println(String.format("maxDepth(%s) = %s", obj.toBfsString(root), obj.maxDepth(root)));
+        System.out.printf("maxDepth(%s) = %s%n", obj.toBfsString(root), obj.maxDepth(root));
     }
 
     public String toBfsString(TreeNode root) {

@@ -5,7 +5,7 @@ import com.computevo.leetcode.easy.helper.ListNode;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/middle-of-the-linked-list/
+ * <a href="https://leetcode.com/problems/middle-of-the-linked-list/">link</a>
  */
 public class e876_MiddleOfLinkedList {
 

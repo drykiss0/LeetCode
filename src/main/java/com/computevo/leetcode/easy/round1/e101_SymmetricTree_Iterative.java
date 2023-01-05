@@ -1,9 +1,13 @@
 package com.computevo.leetcode.easy.round1;
 
+import com.computevo.leetcode.easy.helper.TreeNode;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
  * Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
@@ -30,21 +34,6 @@ import java.util.Queue;
  * Bonus points if you could solve it both recursively and iteratively.
  */
 public class e101_SymmetricTree_Iterative {
-
-    private static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return String.valueOf(val);
-        }
-    }
 
     public int[] toBfsArray(TreeNode root) {
         List<Integer> result = new LinkedList<>();
@@ -99,32 +88,7 @@ public class e101_SymmetricTree_Iterative {
         root.right.right = new TreeNode(3);
 
         e101_SymmetricTree_Iterative obj = new e101_SymmetricTree_Iterative();
-        System.out.println(String.format("isSymmetric(%s) = %s", Arrays.toString(obj.toBfsArray(root)), obj.isSymmetric(root)));
-    }
-
-    /**
-     * Experimental: can it help printing the tree?
-     */
-    private class TreeNodeWithLevel {
-        public TreeNode node;
-        public int level;
-
-        public Integer val() {
-            return node != null ? node.val : null;
-        }
-
-        public TreeNode left() {
-            return node != null ? node.left : null;
-        }
-
-        public TreeNode right() {
-            return node != null ? node.right : null;
-        }
-
-        public TreeNodeWithLevel(TreeNode node, int level) {
-            this.node = node;
-            this.level = level;
-        }
+        printSolution(Arrays.toString(obj.toBfsArray(root)), obj.isSymmetric(root));
     }
 
 }

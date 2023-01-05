@@ -6,7 +6,7 @@ import java.util.Map;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/isomorphic-strings/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/isomorphic-strings/?envType=study-plan&id=level-1">link</a>
  */
 public class e205_IzomorphicStrings {
 

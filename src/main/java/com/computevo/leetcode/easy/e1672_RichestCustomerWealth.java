@@ -3,17 +3,17 @@ package com.computevo.leetcode.easy;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/richest-customer-wealth/
+ * <a href="https://leetcode.com/problems/richest-customer-wealth/">link</a>
  */
 public class e1672_RichestCustomerWealth {
 
     public int maximumWealth(int[][] accounts) {
 
         int max = 0;
-        for (int i = 0; i < accounts.length; i++) {
+        for (int[] account : accounts) {
             int sum = 0;
-            for (int j = 0; j < accounts[i].length; j++) {
-                sum += accounts[i][j];
+            for (int i : account) {
+                sum += i;
             }
             if (sum > max) max = sum;
         }

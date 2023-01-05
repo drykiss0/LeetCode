@@ -5,7 +5,7 @@ import com.computevo.leetcode.easy.helper.ListNode;
 import static com.computevo.leetcode.easy.helper.Utils.*;
 
 /**
- * https://leetcode.com/problems/reverse-linked-list/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/reverse-linked-list/?envType=study-plan&id=level-1">link</a>
  */
 public class e206_ReverseLinkedList {
 
@@ -26,10 +26,6 @@ public class e206_ReverseLinkedList {
             next = temp;
         }
         return curr;
-    }
-
-    public ListNode reverseList(ListNode head) {
-        return reverseListIterative(head);
     }
 
     public static void main(String[] args) {

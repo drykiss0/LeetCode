@@ -10,7 +10,7 @@ import static com.computevo.leetcode.easy.helper.Utils.printInput;
 import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 
 /**
- * https://leetcode.com/problems/binary-tree-level-order-traversal/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/?envType=study-plan&id=level-1">link</a>
  */
 public class e102_BinaryTreeLevelOrderTraversal {
     /**
@@ -58,8 +58,6 @@ public class e102_BinaryTreeLevelOrderTraversal {
 
     /**
      * Official Version
-     * @param root
-     * @return
      */
     public List<List<Integer>> levelOrder(TreeNode root) {
 

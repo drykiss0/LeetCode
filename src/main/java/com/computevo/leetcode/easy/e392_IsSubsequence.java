@@ -3,7 +3,7 @@ package com.computevo.leetcode.easy;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/is-subsequence/?envType=study-plan&id=level-1">link</a>
  */
 public class e392_IsSubsequence {
 

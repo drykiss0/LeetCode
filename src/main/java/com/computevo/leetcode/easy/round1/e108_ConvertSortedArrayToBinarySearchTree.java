@@ -1,9 +1,13 @@
 package com.computevo.leetcode.easy.round1;
 
+import com.computevo.leetcode.easy.helper.TreeNode;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
@@ -23,21 +27,6 @@ import java.util.Queue;
  * -10  5
  */
 public class e108_ConvertSortedArrayToBinarySearchTree {
-
-    private class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return val + "";
-        }
-    }
 
     public TreeNode sortedArrayToBST(int[] nums) {
         return sortedArrayToBST(nums, 0, nums.length - 1);
@@ -83,9 +72,10 @@ public class e108_ConvertSortedArrayToBinarySearchTree {
         //int[] arr = {-10,-3,0,5,9};
         int[] arr = {0, 1, 2, 3, 4, 5};
 
-        System.out.println(String.format("sortedArrayToBST(%s) = %s",
+        printSolution(
                 Arrays.toString(arr),
-                obj.toBfsString(obj.sortedArrayToBST(arr))));
+                obj.toBfsString(obj.sortedArrayToBST(arr))
+        );
     }
 
 }

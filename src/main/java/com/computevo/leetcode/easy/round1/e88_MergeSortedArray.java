@@ -42,8 +42,8 @@ public class e88_MergeSortedArray {
         int m = 3;
         int[] nums2 = {2, 5, 6};
         int n = 3;
-        System.out.println(String.format(
-                "merge(%s, %s, %s, %s) = ", Arrays.toString(nums1), m, Arrays.toString(nums2), n));
+        System.out.printf(
+                "merge(%s, %s, %s, %s) = %n", Arrays.toString(nums1), m, Arrays.toString(nums2), n);
         new e88_MergeSortedArray().merge(nums1, m, nums2, n);
         System.out.println(Arrays.toString(nums1));
     }

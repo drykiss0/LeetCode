@@ -5,7 +5,7 @@ import java.util.Arrays;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/running-sum-of-1d-array/
+ * <a href="https://leetcode.com/problems/running-sum-of-1d-array/">link</a>
  */
 public class e1480_RunningSumOf1dArray {
 

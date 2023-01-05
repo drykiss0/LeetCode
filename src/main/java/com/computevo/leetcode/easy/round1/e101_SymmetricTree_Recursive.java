@@ -59,6 +59,7 @@ public class e101_SymmetricTree_Recursive {
     }
 
 
+    @SuppressWarnings("DuplicatedCode")
     public static void main(String[] args) {
 
         TreeNode root = new TreeNode(1);
@@ -70,6 +71,6 @@ public class e101_SymmetricTree_Recursive {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(3);
 
-        System.out.println(String.format("isSymmetric(%s) = %s", root, new e101_SymmetricTree_Recursive().isSymmetric(root)));
+        System.out.printf("isSymmetric(%s) = %s%n", root, new e101_SymmetricTree_Recursive().isSymmetric(root));
     }
 }

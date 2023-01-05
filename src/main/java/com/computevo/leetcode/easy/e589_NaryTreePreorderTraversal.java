@@ -8,7 +8,7 @@ import static com.computevo.leetcode.easy.helper.Utils.printInput;
 import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 
 /**
- * https://leetcode.com/problems/n-ary-tree-preorder-traversal/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/n-ary-tree-preorder-traversal/?envType=study-plan&id=level-1">link</a>
  */
 public class e589_NaryTreePreorderTraversal {
 

@@ -5,13 +5,14 @@ import com.computevo.leetcode.easy.helper.ListNode;
 import static com.computevo.leetcode.easy.helper.Utils.*;
 
 /**
- * https://leetcode.com/problems/merge-two-sorted-lists/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/merge-two-sorted-lists/?envType=study-plan&id=level-1">link</a>
  */
 public class e21_MergeTwoSortedLists {
 
     /**
      * LettCode's official solution for reference
      */
+    @SuppressWarnings("unused")
     public ListNode official_mergeTwoLists(ListNode l1, ListNode l2) {
         // maintain an unchanging reference to node ahead of the return node.
         ListNode prehead = new ListNode(-1);

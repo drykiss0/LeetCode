@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Node {
-    public int val;
+    public final int val;
     public List<Node> children = new ArrayList<>();
 
     public Node(int val) {

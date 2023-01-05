@@ -3,18 +3,18 @@ package com.computevo.leetcode.easy;
 import static com.computevo.leetcode.easy.helper.Utils.printSolution;
 
 /**
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan&id=level-1
+ * <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/?envType=study-plan&id=level-1">link</a>
  */
 public class e121_BestTimeToBuyAndSellStock {
 
     public int maxProfit(int[] prices) {
         int min = Integer.MAX_VALUE;
         int currentProfit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if (prices[i] < min) {
-                min = prices[i];
-            } else if (currentProfit < prices[i] - min) {
-                currentProfit = prices[i] - min;
+        for (int price : prices) {
+            if (price < min) {
+                min = price;
+            } else if (currentProfit < price - min) {
+                currentProfit = price - min;
             }
         }
         return currentProfit;
