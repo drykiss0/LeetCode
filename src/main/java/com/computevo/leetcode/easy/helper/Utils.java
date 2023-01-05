@@ -47,6 +47,12 @@ public class Utils {
         printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2)));
     }
 
+    @SuppressWarnings("unused")
+    public static void printInput(String label1, Object input1, String label2, Object input2, String label3, Object input3) {
+        printHeader();
+        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2),  Pair.of(label3, input3)));
+    }
+
     private static void printSection(String sectionLabel, List<Pair<String, Object>> dataList) {
         String namedInputString = dataList.stream().map(data -> {
             StringBuilder sb = new StringBuilder(" ");
@@ -59,7 +65,11 @@ public class Utils {
     }
 
     private static String header() {
-        return "---------- " + callerName() + " ----------";
+        return "---------- " +
+                callerName()
+                        .replaceAll("_", "")
+                        .replaceAll("([A-Z])", " $1") +
+                " ----------";
     }
 
     private static void printHeader() {
