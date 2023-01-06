@@ -2,6 +2,8 @@ package com.computevo.leetcode.easy;
 
 import com.computevo.leetcode.easy.helper.TreeNode;
 
+import java.util.LinkedList;
+
 import static com.computevo.leetcode.easy.helper.Utils.printInput;
 import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 
@@ -11,7 +13,23 @@ import static com.computevo.leetcode.easy.helper.Utils.printOutput;
 public class m98_ValidateBinarySearchTree {
 
     public boolean isValidBST(TreeNode root) {
-        return false;
+
+        LinkedList<TreeNode> stack = new LinkedList<>();
+        TreeNode node = root;
+        Integer prevVal = null;
+        while (!stack.isEmpty() || node != null) {
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                TreeNode popped = stack.pop();
+                if (prevVal != null && popped.val < prevVal)
+                    return false;
+                prevVal = popped.val;
+                node = popped.right;
+            }
+        }
+        return true;
     }
 
 
@@ -20,16 +38,13 @@ public class m98_ValidateBinarySearchTree {
         TreeNode input = new TreeNode(
                 5,
                 new TreeNode(1),
-                new TreeNode(4,
-                        new TreeNode(3),
-                        new TreeNode(6)
+                new TreeNode(7,
+                        new TreeNode(6),
+                        new TreeNode(8)
                 )
         );
 
         printInput(input);
-        printOutput(
-                "    Mine", new m98_ValidateBinarySearchTree().isValidBST(input),
-                "Official", new m98_ValidateBinarySearchTree().isValidBST(input)
-        );
+        printOutput(new m98_ValidateBinarySearchTree().isValidBST(input));
     }
 }
