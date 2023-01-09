@@ -25,6 +25,18 @@ public class TreeNode {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hashCode(val);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        return val == ((TreeNode) obj).val;
+    }
+
+    @Override
     public String toString() {
         String[] nodesStr = toStringChildren(this).toArray(String[]::new);
         for (int i = nodesStr.length - 1; i >= 0 && nodesStr[i].equals(NULL_STR); i--) {
