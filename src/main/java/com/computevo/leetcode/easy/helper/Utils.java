@@ -50,13 +50,13 @@ public class Utils {
     @SuppressWarnings("unused")
     public static void printInput(String label1, Object input1, String label2, Object input2, String label3, Object input3) {
         printHeader();
-        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2),  Pair.of(label3, input3)));
+        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2), Pair.of(label3, input3)));
     }
 
     @SuppressWarnings("unused")
     public static void printInput(String label1, Object input1, String label2, Object input2, String label3, Object input3, String label4, Object input4) {
         printHeader();
-        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2),  Pair.of(label3, input3), Pair.of(label4, input4)));
+        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2), Pair.of(label3, input3), Pair.of(label4, input4)));
     }
 
     private static void printSection(String sectionLabel, List<Pair<String, Object>> dataList) {
@@ -97,10 +97,13 @@ public class Utils {
         if (arg.getClass().isAssignableFrom(int[][].class)) {
             return toMatrixString((int[][]) arg);
         }
+        if (arg.getClass().isAssignableFrom(char[][].class)) {
+            return toMatrixString((char[][]) arg);
+        }
         return new ToStringBuilder(arg, ToStringStyle.SIMPLE_STYLE).append(arg).toString();
     }
 
-    public static String toMatrixString(int[][] matrix) {
+    private static String toMatrixString(int[][] matrix) {
         StringBuilder sb = new StringBuilder("\n");
         for (int row = 0; row < matrix.length; row++) {
             if (row == 0)
@@ -113,6 +116,29 @@ public class Utils {
                 sb.append(String.format("%3d", matrix[row][col]));
             }
             sb.append("  ");
+            if (row == 0)
+                sb.append("┐");
+            else if (row == matrix.length - 1)
+                sb.append("┘");
+            else sb.append("│");
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    private static String toMatrixString(char[][] matrix) {
+        StringBuilder sb = new StringBuilder("\n");
+        for (int row = 0; row < matrix.length; row++) {
+            if (row == 0)
+                sb.append("┌");
+            else if (row == matrix.length - 1)
+                sb.append("└");
+            else sb.append("│");
+
+            for (int col = 0; col < matrix[row].length; col++) {
+                sb.append(String.format(" %s ", matrix[row][col]));
+            }
+            sb.append(" ");
             if (row == 0)
                 sb.append("┐");
             else if (row == matrix.length - 1)
