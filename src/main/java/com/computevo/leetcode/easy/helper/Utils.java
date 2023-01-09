@@ -94,7 +94,33 @@ public class Utils {
         } catch (NoSuchMethodException e) {
             throw new RuntimeException(e);
         }
+        if (arg.getClass().isAssignableFrom(int[][].class)) {
+            return toMatrixString((int[][]) arg);
+        }
         return new ToStringBuilder(arg, ToStringStyle.SIMPLE_STYLE).append(arg).toString();
+    }
+
+    public static String toMatrixString(int[][] matrix) {
+        StringBuilder sb = new StringBuilder("\n");
+        for (int row = 0; row < matrix.length; row++) {
+            if (row == 0)
+                sb.append("┌");
+            else if (row == matrix.length - 1)
+                sb.append("└");
+            else sb.append("│");
+
+            for (int col = 0; col < matrix[row].length; col++) {
+                sb.append(String.format("%3d", matrix[row][col]));
+            }
+            sb.append("  ");
+            if (row == 0)
+                sb.append("┐");
+            else if (row == matrix.length - 1)
+                sb.append("┘");
+            else sb.append("│");
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 
     private static String callerName() {
