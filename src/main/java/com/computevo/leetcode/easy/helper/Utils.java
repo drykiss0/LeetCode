@@ -37,9 +37,19 @@ public class Utils {
         printFooter();
     }
 
+    public static void printOutput(String label1, Object output1, String label2, Object output2, String label3, Object output3) {
+        printSection("Output", List.of(Pair.of(label1, output1), Pair.of(label2, output2), Pair.of(label3, output3)));
+        printFooter();
+    }
+
     public static void printInput(Object input) {
         printHeader();
         printSection("Input", List.of(Pair.of(null, input)));
+    }
+
+    public static void printInput(String label, Object input) {
+        printHeader();
+        printSection("Input", List.of(Pair.of(label, input)));
     }
 
     public static void printInput(String label1, Object input1, String label2, Object input2) {
