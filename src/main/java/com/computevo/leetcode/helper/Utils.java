@@ -57,19 +57,19 @@ public class Utils {
         printHeader();
         List<Pair<String, Object>> labelledInputs = new ArrayList<>();
         for(int i = 0; i < inputs.length; i++) {
-            labelledInputs.add(Pair.of(label+i, inputs[i]));
+            labelledInputs.add(Pair.of(label+(i+1), inputs[i]));
         }
         printSection("Input", labelledInputs);
     }
 
     public static void printInput(String label1, String label2, Object[][] inputs) {
         printHeader();
-        List<Pair<String, Object>> labelledInputs = new ArrayList<>();
-        for(int i = 0; i < inputs.length; i++) {
-            labelledInputs.add(Pair.of(label1+i, inputs[i][0]));
-            labelledInputs.add(Pair.of(label2+i, inputs[i][1]));
+        for (int i = 0; i < inputs.length; i++) {
+            List<Pair<String, Object>> labelledInputs = new ArrayList<>();
+            labelledInputs.add(Pair.of(label1, inputs[i][0]));
+            labelledInputs.add(Pair.of(label2, inputs[i][1]));
+            printSection("Input"+(i+1), labelledInputs);
         }
-        printSection("Input", labelledInputs);
     }
 
     public static void printInput(String label1, Object input1, String label2, Object input2) {
