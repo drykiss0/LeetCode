@@ -69,6 +69,16 @@ public class Utils {
         printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2), Pair.of(label3, input3), Pair.of(label4, input4)));
     }
 
+    public static void printInput(String label1, Object input1, String label2, Object input2, String label3, Object input3, String label4, Object input4, String label5, Object input5) {
+        printHeader();
+        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2), Pair.of(label3, input3), Pair.of(label4, input4), Pair.of(label5, input5)));
+    }
+
+    public static void printInput(String label1, Object input1, String label2, Object input2, String label3, Object input3, String label4, Object input4, String label5, Object input5, String label6, Object input6) {
+        printHeader();
+        printSection("Input", List.of(Pair.of(label1, input1), Pair.of(label2, input2), Pair.of(label3, input3), Pair.of(label4, input4), Pair.of(label5, input5), Pair.of(label6, input6)));
+    }
+
     private static void printSection(String sectionLabel, List<Pair<String, Object>> dataList) {
         String namedInputString = dataList.stream().map(data -> {
             StringBuilder sb = new StringBuilder(" ");
