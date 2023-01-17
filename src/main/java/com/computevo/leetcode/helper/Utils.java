@@ -5,6 +5,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.commons.lang3.tuple.Pair;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -50,6 +51,25 @@ public class Utils {
     public static void printInput(String label, Object input) {
         printHeader();
         printSection("Input", List.of(Pair.of(label, input)));
+    }
+
+    public static void printInput(String label, Object[] inputs) {
+        printHeader();
+        List<Pair<String, Object>> labelledInputs = new ArrayList<>();
+        for(int i = 0; i < inputs.length; i++) {
+            labelledInputs.add(Pair.of(label+i, inputs[i]));
+        }
+        printSection("Input", labelledInputs);
+    }
+
+    public static void printInput(String label1, String label2, Object[][] inputs) {
+        printHeader();
+        List<Pair<String, Object>> labelledInputs = new ArrayList<>();
+        for(int i = 0; i < inputs.length; i++) {
+            labelledInputs.add(Pair.of(label1+i, inputs[i][0]));
+            labelledInputs.add(Pair.of(label2+i, inputs[i][1]));
+        }
+        printSection("Input", labelledInputs);
     }
 
     public static void printInput(String label1, Object input1, String label2, Object input2) {
