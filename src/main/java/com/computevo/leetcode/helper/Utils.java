@@ -145,7 +145,8 @@ public class Utils {
         if (arg.getClass().isAssignableFrom(char[][].class)) {
             return toMatrixString((char[][]) arg);
         }
-        return new ToStringBuilder(arg, ToStringStyle.SIMPLE_STYLE).append(arg).toString();
+        return new ToStringBuilder(arg, LeetCodeToStringStyle.INSTANCE)
+                .append(arg).toString();
     }
 
     private static String toMatrixString(int[][] matrix) {
@@ -211,5 +212,20 @@ public class Utils {
             nodes.get(i).next = nodes.get(i + 1);
         }
         return nodes.size() > 0 ? nodes.get(0) : new ListNode(-1);
+    }
+
+    public static class LeetCodeToStringStyle extends ToStringStyle {
+        public static LeetCodeToStringStyle INSTANCE = new LeetCodeToStringStyle();
+
+        private LeetCodeToStringStyle() {
+            this.setUseClassName(false);
+            this.setUseIdentityHashCode(false);
+            this.setUseFieldNames(false);
+            this.setContentStart(StringUtils.EMPTY);
+            this.setContentEnd(StringUtils.EMPTY);
+            this.setArrayStart("{ ");
+            this.setArrayEnd(" }");
+            this.setArraySeparator(", ");
+        }
     }
 }
